@@ -14,11 +14,11 @@ def create_docs_of_interest():
     output_json_list = json.load(open('data.json'))
     tuple_keys = ('name', 'lat', 'long', 'population')
 
-    # for every dictionary in our list, we first check if our tuple keys are in that dictionary
-    # if that tuple key is in the dictionary, we add it to our new list of dictionaries
+    # for every key in the tuple, check if the key exists in the new_dict_list
+    # if the key does not exist, then add it to the new_dict_list with it's corresponding value
     new_dict_list = [dict((k, d[k]) for k in tuple_keys if k in d) for d in output_json_list]
 
-    # delete this json file with the data as it's content has been migrated
+    # delete this json file with the data since its content has been migrated
     os.remove("data.json")
 
     return new_dict_list

@@ -23,9 +23,8 @@ def get_score_number(query_num, actual_num, max_num):
 
 
 # gets sorted results based on query parameters
-def get_results(name, population, lat, long):
+def get_results(name, population, lat, long, cities):
     results = []
-    cities = get_index()
 
     max_pop = 0
     max_lat = 0.0

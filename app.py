@@ -19,7 +19,8 @@ def api_name():
     lat = float(request.args.get('lat', 0.0))
     long = float(request.args.get('long', 0.0))
 
-    sorted_results = queries.get_results(name, population, lat, long)
+    index = queries.get_index()
+    sorted_results = queries.get_results(name, population, lat, long, index)
 
     return jsonify(sorted_results)
 

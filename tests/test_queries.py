@@ -7,7 +7,7 @@ class QueriesTestCase(unittest.TestCase):
     def test_get_score_name(self):
         string_1 = "test"
         string_2 = "test"
-        self.assertEquals(get_score_name(string_1, string_2), 1.0)
+        self.assertEqual(get_score_name(string_1, string_2), 1.0)
 
     def test_get_score_number(self):
         actual_number = 100

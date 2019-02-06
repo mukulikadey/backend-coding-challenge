@@ -1,6 +1,6 @@
-
 from flask import Flask, request, jsonify, render_template
 from flask_restful import Api
+
 import queries
 
 app = Flask(__name__)
@@ -25,4 +25,4 @@ def api_name():
     return jsonify(sorted_results)
 
 
-app.run(debug=True, use_reloader=False)
+app.run(use_reloader=False)

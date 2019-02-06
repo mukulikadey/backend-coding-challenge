@@ -11,6 +11,7 @@ def convert_to_json(file):
     :param file: the tsv file
     :return: converted json file
     """
+
     file.to_json('data.json', date_format='iso', orient='records')
 
 
@@ -19,6 +20,7 @@ def create_docs_of_interest():
     This creates a new new list of dictionaries with the keys of interest: name, lat, long, population
     :return: the index of cities as a list of dictionaries.
     """
+
     output_json_list = json.load(open('data.json'))
     tuple_keys = ('name', 'lat', 'long', 'population')
 
@@ -39,6 +41,7 @@ def create_indexer(docs):
     :param docs: the list of dictionaries
     :return: the json file with the list of dictionaries.
     """
+
     with open('search_indexer.json', 'w') as outfile:
         json.dump(docs, outfile)
 

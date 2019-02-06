@@ -10,6 +10,7 @@ def get_index():
 
     :return: a list of cities as dictionary objects.
     """
+
     with open('search_indexer.json', 'r') as file:
         return json.load(file)
 
@@ -22,7 +23,8 @@ def get_score_name(query_name, actual_name):
     :param actual_name: the city name in our index.
     :return: similarity score between the query and actual name.
     """
-    return SequenceMatcher(lambda x: x == " ", actual_name, query_name).ratio()
+
+    return SequenceMatcher(lambda x: x == ' ', actual_name, query_name).ratio()
 
 
 def get_score_number(query_num, actual_num, max_num):

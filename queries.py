@@ -34,7 +34,8 @@ def get_score_number(query_num, actual_num, max_num):
     :param max_num: the maximum value for that numeric property.
     :return: the normalized score between the query and actual name.
     """
-    score = (1 - abs(actual_num - query_num) / max_num) if (max_num != 0) else 0
+
+    score = (1 - abs(actual_num - query_num) / float(max_num)) if (max_num != 0) else 0
 
     return score
 
@@ -50,6 +51,7 @@ def get_results(name, population, lat, long, cities):
     :param cities: the list of cities in our index.
     :return: the relevant results based on user query in decreasing order of scores.
     """
+
     results = []
 
     max_pop = 0
